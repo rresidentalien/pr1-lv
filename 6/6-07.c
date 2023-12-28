@@ -32,5 +32,6 @@ int main() {
 
     sredina = (float)(suma/10);
     printf("Sredina prvih znamenki elemenata niza: %.2f", sredina);
+    
     return 0;
 }
