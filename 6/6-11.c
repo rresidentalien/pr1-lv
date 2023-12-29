@@ -21,4 +21,6 @@ int main() {
     for (i=0; i<100; ++i) {
         printf("%d ", pseudoSlucajanBroj(x, y));
     }
+
+    return 0;
 }
