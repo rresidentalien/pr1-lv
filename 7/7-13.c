@@ -19,11 +19,11 @@ int main() {
 
     double* podaci = NULL; 
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; ++i) {
         double t = rand() % 991 + 10;
         podaci = (double*)malloc(t * sizeof(double));
 
-        for (i = 0; i < n; i++) {
+        for (i = 0; i < n; ++i) {
             double broj = (double)(rand() % 11) - 10;
             podaci[i] = broj;
         }
@@ -32,7 +32,7 @@ int main() {
     double min = podaci[0];
     double max = podaci[0];
 
-    for (int i = 1; i < n; i++) {
+    for (int i = 1; i < n; ++i) {
         if (podaci[i] < min) {
             min = podaci[i];
         }
