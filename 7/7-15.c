@@ -32,7 +32,7 @@ int main() {
         do {
             indeks = rand() % n;
             nemaPonavljanja = 1;
-            for (j = 0; j < i; j++) {
+            for (j = 0; j < i; ++j) {
                 if (odabraniIndeksi[j] == indeks) {
                     nemaPonavljanja = 0;
                     break;
@@ -43,7 +43,7 @@ int main() {
     }
 
     double suma = 0.0;
-    for (int i = 0; i < brojElemenata; i++) {
+    for (int i = 0; i < brojElemenata; ++i) {
         suma += array[odabraniIndeksi[i]];
     }
 
