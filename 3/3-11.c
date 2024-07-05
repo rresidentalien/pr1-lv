@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main() {
     char unos;
     int i=0;
@@ -7,5 +8,7 @@ int main() {
         ++i;
     }while (unos!='q');
     
-    printf("q je unesen nakon %d puta", i-1);
+    printf("q je unesen nakon %d puta", i);
+
+    return 0;
 }

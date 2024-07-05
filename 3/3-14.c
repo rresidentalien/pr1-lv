@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main() {
     int n, i, j, brojDjelitelja;
     int naj = 0;

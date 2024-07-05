@@ -5,7 +5,7 @@ int main() {
     int broj = 0;
     int zbroj = 0;
 
-    printf("Brojevi sa zadnjom znamenkom djeljivom s 3: ");
+    printf("Troznamenkasti brojevi sa zadnjom znamenkom djeljivom s 3: ");
     for (i = 100; i <= 999; ++i) {
         if (i % 10 % 3 == 0) {
             printf("%d ", i);

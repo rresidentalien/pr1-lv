@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main() {
     int n, i, j, prost;
     do {
@@ -20,4 +21,6 @@ int main() {
             printf("%d ", i);
         }
     }
+
+    return 0;
 }

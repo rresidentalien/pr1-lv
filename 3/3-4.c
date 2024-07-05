@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main() {
     int a;
     do {
@@ -12,5 +13,6 @@ int main() {
             printf("__");
         }
     }
+    
     return 0;
 }

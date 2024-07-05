@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main() {
     int bodovi;
     float udio;
@@ -8,4 +9,6 @@ int main() {
     
     udio = (bodovi/28.0)*20;
     printf("Ivica ima %.2f bodova", udio);
+
+    return 0;
 }

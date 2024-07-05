@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main() {
     int i, a;
     float j = 0;
@@ -11,5 +12,6 @@ int main() {
     }
     
     printf("%.2f%%", j/10*100);
+
     return 0;
 }
