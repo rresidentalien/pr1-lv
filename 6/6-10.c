@@ -23,4 +23,6 @@ int main() {
     }while (broj > 128 || broj < 1);
 
     binarnaPretvorba(broj);
+
+    return 0;
 }

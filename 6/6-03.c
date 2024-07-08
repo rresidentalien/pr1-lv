@@ -9,17 +9,18 @@ float sredinaDjelitelja(int x) {
     float suma=0, djelitelji=0;
     float sredina;
 
-    if (x<0) {
+    if (x < 0) {
         x = -x; 
     }
 
-    for (i=1; i<x; ++i) {
-        if (x%i==0) {
+    for (i = 1; i < x; ++i) {
+        if (x % i == 0) {
             suma += i;
             ++djelitelji;
         }
     }
 
+    if (djelitelji == 0) return 0;
     sredina = suma/djelitelji;
 
     return sredina;
@@ -31,4 +32,6 @@ int main() {
     scanf("%d", &broj);
 
     printf("Aritmeticka sredina pozitivnih djelitelja je: %.2f", sredinaDjelitelja(broj));
+
+    return 0;
 }

@@ -27,4 +27,6 @@ int main() {
     scanf("%d %d %d", &a, &b, &c);
 
     printf("%.2f", povrsina(a, b, c));
+
+    return 0;
 }

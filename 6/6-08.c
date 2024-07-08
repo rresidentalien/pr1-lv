@@ -5,6 +5,7 @@ funkciju s 123 te potom s −321 kao argumentom i ispisati na ekran povratnu
 vrijednost.*/
 
 #include <stdio.h>
+#include <math.h>
 
 int faktorijel(int x) {
     int i, broj = 1;
@@ -17,6 +18,7 @@ int faktorijel(int x) {
 }
 
 int faktorijelZnamenki(int y) {
+    y = abs(y);
     int znamenka, zbroj = 0;
 
     while (y != 0) {
@@ -29,7 +31,8 @@ int faktorijelZnamenki(int y) {
 }
 
 int main() {
-    printf("%d", faktorijelZnamenki(234));
+    printf("%d\n", faktorijelZnamenki(123));
+    printf("%d", faktorijelZnamenki(-321));
 
     return 0;
 }

@@ -4,17 +4,18 @@ nog polja od 10 elemenata, pozvati funkciju za svaki element tog polja te izraˇ
 i na ekran ispisati srednju vrijednost prvih znamenki svih elemenata tog polja.*/
 
 #include <stdio.h>
+#include <math.h>
 
 int prvaZnamenka(int broj) {
-    int prva, trenutna;
+    int trenutna = 0;
 
     while (broj != 0) {
-        prva = trenutna;
+        trenutna;
         trenutna = broj % 10;
         broj /= 10;
     }
 
-    return prva;
+    return abs(trenutna);
 }
 
 int main() {
@@ -30,7 +31,7 @@ int main() {
         suma += prvaZnamenka(polje[i]);
     }
 
-    sredina = (float)(suma/10);
+    sredina = suma / 10.0;
     printf("Sredina prvih znamenki elemenata niza: %.2f", sredina);
     
     return 0;

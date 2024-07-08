@@ -30,4 +30,6 @@ int test(int uneseniBroj) {
 
 int main() {
     printf("%d", test(579859));
+
+    return 0;
 }

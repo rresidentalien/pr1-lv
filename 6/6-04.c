@@ -26,4 +26,6 @@ int razlika(int x) {
 
 int main() {
     printf("Razlika najvece i najmanje znamenke: %d", razlika(26931));
+
+    return 0;
 }
