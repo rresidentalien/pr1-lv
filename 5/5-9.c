@@ -11,10 +11,7 @@ int main() {
     printf("Unesi polje:");
     fgets(polje, 100, stdin);
 
-    printf("\nPolje:");
-    for (i=0; i<strlen(polje); ++i) {
-        printf("%c", polje[i]);
-    }
+    printf("\nPolje: %s", polje);
 
     printf("\nNovo polje: ");
     for (i=0; i<strlen(polje); ++i) {

@@ -16,6 +16,8 @@ int main() {
         }
     }
 
+    polje2[j] = '\0';
+
     printf("Novi string: %s", polje2);
 
     return 0;

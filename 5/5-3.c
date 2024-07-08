@@ -13,7 +13,7 @@ int main() {
     int i, j;
 
     for (i=0; i<7; ++i) {
-        polje[i] = (rand() % 50);
+        polje[i] = (rand() % 49) + 1;
         for (j=0; j<i; ++j) {
             if (polje[j] == polje[i]) {
                 --i;

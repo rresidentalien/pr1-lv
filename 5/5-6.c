@@ -11,7 +11,7 @@ int main () {
     int polje[40], i, j;
 
     for (i=0; i<40; ++i) {
-        polje[i] = (rand() % 100) - 30;
+        polje[i] = (rand() % 101) - 30;
         for (j=0; j<i; ++j) {
             if (polje[i]==polje[j]) {
                 --i;

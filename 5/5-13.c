@@ -8,18 +8,19 @@ int main() {
     int i, j;
 
     printf("Unesite prvo polje: ");
-    fgets(polje1, 20, stdin);
+    scanf("%20[^\n]", polje1);
 
     printf("Unesite drugo polje: ");
-    fgets(polje2, 20, stdin);
+    scanf(" %20[^\n]", polje2);
 
-    for (i = 0; polje1[i] != 10; ++i) {
+    for (i = 0; polje1[i] != '\0'; ++i) {
         polje12[i] = polje1[i];
     }
 
-    for (j = 0; polje2[j] != 10; ++j) {
+    for (j = 0; polje2[j] != '\0'; ++j) {
         polje12[i + j] = polje2[j];
     }
+    polje12[i+j] = '\0';
 
     printf("Spojeni string: %s", polje12);
 

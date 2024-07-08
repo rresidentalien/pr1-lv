@@ -9,26 +9,26 @@ kraju, na ekran ispisati izmijenjeni string.*/
 int main() {
     char polje[80];
     char znak;
-    int i, broj=0, djelitelj, sredina;
+    int i, broj = 0, duljina, sredina;
 
     printf("Unesi polje znakova: ");
-    fgets(polje, 80, stdin);
+    scanf("%80[^\n]", polje);
     printf("Unesi znak: ");
-    scanf("%s", &znak);
+    scanf(" %c", &znak);
 
-    djelitelj = strlen(polje);
+    duljina = strlen(polje);
 
-    for (i=0; i<strlen(polje); ++i) {
-        broj = broj + polje[i];
+    for (i=0; i < duljina; ++i) {
+        broj += polje[i];
     }
 
-    sredina = broj / djelitelj;
+    sredina = broj / duljina;
 
     for (i=0; i<strlen(polje); ++i) {
         if (polje[i] < sredina) {
-            polje[i] = sredina;
+            polje[i] = znak;
         }
     }
 
-    printf("Novo polje: %c", polje);
+    printf("Novo polje: %s", polje);
 }

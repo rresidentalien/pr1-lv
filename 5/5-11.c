@@ -7,15 +7,16 @@ stringu osim razmaka i toˇcki koje treba preskoˇciti prilikom izraˇcuna.*/
 
 int main() {
     char polje[220];
-    int i, djelitelj=0, vrijednost=-10, srednjaVrijednost;
+    int i, djelitelj = 0, vrijednost = 0, srednjaVrijednost;
 
     printf("Unesi rečenicu od najviše 220 znakova: ");
-    fgets(polje, 220, stdin);
+    scanf("%[^\n]", polje);
 
-    for (i=0; i<strlen(polje); ++i) {
-        if (polje[i] !=' ' && polje[i]!='.') {
+    int duljina = strlen(polje);
+    for (i = 0; i < duljina; ++i) {
+        if (polje[i] != ' ' && polje[i] != '.') {
             ++djelitelj;
-            vrijednost = vrijednost+polje[i];
+            vrijednost += polje[i];
         }
     }
 
