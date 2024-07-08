@@ -1,41 +1,37 @@
 #include <stdio.h>
+
 int main() {
-    int m, n, i, j;
+    int m, i, j;
+    float suma = 0;
+    int brojac = 0;
 
     do {
         scanf("%d", &m);
-    }while (m >= 3 || m >= 16);
-    do {
-        scanf("%d", &n);
-    }while (m % 2 == 0);
+    } while (m <= 3 || m >= 16 || m % 2 == 0);
 
-    int polje[m][n];
-    for (i=0; i<m; ++i) {
-        for (j=0; j<n; ++j) {
-            scanf("%d", &polje[i][j]);
+    float polje[m][m];
+    for (i = 0; i < m; ++i) {
+        for (j = 0; j < m; ++j) {
+            scanf("%f", &polje[i][j]);
         }
     }
 
-    int sredisnjiRed = m / 2;
-    int sredisnjiStupac = n / 2;
-    int suma = 0;
-    int brojac = 0;
-
-    for (i=0; i<m; ++i) {
-        for (j=0; j<n; ++j) {
-            if (i != sredisnjiRed || j != sredisnjiStupac) {
+    int sredisnji = m / 2;
+    for (i = 0; i < m; ++i) {
+        for (j = 0; j < m; ++j) {
+            if (i != sredisnji && j != sredisnji) {
                 suma += polje[i][j];
                 ++brojac;
             }
         }
     }
 
-    int sredina = suma / brojac;
-    polje[sredisnjiRed][sredisnjiStupac] = sredina;
+    float sredina = suma / brojac;
+    polje[sredisnji][sredisnji] = sredina;
 
-    for (i=0; i<m; ++i) {
-        for (j=0; j<n; ++j) {
-            printf("%d ", polje[i][j]);
+    for (i = 0; i < m; ++i) {
+        for (j = 0; j < m; ++j) {
+            printf("%.2f ", polje[i][j]);
         }
         printf("\n");
     }

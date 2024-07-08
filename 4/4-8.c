@@ -3,6 +3,7 @@
 int main() {
     int polje[20];
     int i;
+    
     for (i = 0; i < 20; ++i) {
         printf("Unesi %d. element: ", i + 1);
         do {
@@ -22,6 +23,3 @@ int main() {
 
     return 0;
 }
-
-    
-

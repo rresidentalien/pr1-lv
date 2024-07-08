@@ -1,15 +1,17 @@
 #include <stdio.h>
+
 int main() {
-    int m, i, j, najmanji, najveci;
+    int m, i, j;
+    float najmanji, najveci;
 
     do {
         scanf("%d", &m);
     }while (m <= 3 || m >= 16);
 
-    int polje[m][m];
+    float polje[m][m];
     for (i = 0; i < m; ++i) {
         for (j = 0; j < m; ++j) {
-            scanf("%d", &polje[i][j]);
+            scanf("%f", &polje[i][j]);
         }
     }
 
@@ -27,8 +29,8 @@ int main() {
         }
     }
 
-    printf("Najmanji broj iznad sporedne dijagonale: %d", najmanji);
-    printf("\nNajveci broj ispod glavne dijagonale: %d", najveci);
+    printf("Najmanji broj iznad sporedne dijagonale: %f", najmanji);
+    printf("\nNajveci broj ispod glavne dijagonale: %f", najveci);
 
     return 0;
 }

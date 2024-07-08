@@ -1,8 +1,8 @@
 #include <stdio.h>
+
 int main() {
     int m, n, i, j;
-    int suma;
-    float sredina;
+    float suma, sredina;
 
     do {
         scanf("%d", &m);
@@ -11,10 +11,10 @@ int main() {
         scanf("%d", &n);
     }while (n < 2 || n >= 15);
 
-    int polje[m][n];
+    float polje[m][n];
     for (i=0; i<m; ++i) {
         for (j=0; j<n; ++j) {
-            scanf("%d", &polje[i][j]);
+            scanf("%f", &polje[i][j]);
         }
     }
 
@@ -29,6 +29,3 @@ int main() {
 
     return 0;
 }
-
-    
-

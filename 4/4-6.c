@@ -1,6 +1,8 @@
 #include <stdio.h>
+
 int main() {
     int q, i;
+    
     do {
         scanf("%d", &q);
     }while (q <= 5 || q > 12);

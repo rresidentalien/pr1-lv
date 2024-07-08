@@ -1,38 +1,41 @@
 #include <stdio.h>
+
 int main() {
-    int n, i, najmanji, najveci, temp;
+    int n, i, indexNajmanji, indexNajveci;
+    float najmanji, najveci, temp;
 
     do {
         scanf("%d", &n);
-    }while (n <= 3 || n >= 16);
+    }while (n <= 3 || n >= 13);
 
-    int polje[n];
+    float polje[n];
     for (i = 0; i < n; ++i) {
-            scanf("%d", &polje[i]);
+            scanf("%f", &polje[i]);
     }
 
     najveci = polje[0];
     najmanji = polje[0];
+    indexNajveci = 0;
+    indexNajmanji = 0;
 
     for (i = 0; i < n; ++i) {
         if (polje[i] > najveci) {
             najveci = polje[i];
+            indexNajveci = i;
         }
         if (polje[i] < najmanji) {
             najmanji = polje[i];
-        }
-
-        if (polje[i] == najveci) {
-            polje[i] = najmanji;
-        } 
-        else if (polje[i] == najmanji) {
-            polje[i] = najveci;
+            indexNajmanji = i;
         }
     }
 
+    temp = polje[indexNajveci];
+    polje[indexNajveci] = polje[indexNajmanji];
+    polje[indexNajmanji] = temp;
+
     printf("Novo polje: \n");
     for (i = 0; i < n; ++i) {
-        printf("%d ", polje[i]);
+        printf("%.2f ", polje[i]);
     }
 
     return 0;

@@ -1,16 +1,17 @@
 #include <stdio.h>
+
 int main() {
     int m, i, j;
     printf("Unesi dimenzije matrice: ");
     do {
         scanf("%d", &m);
-    }while (m <= 3 || m >= 16);
+    }while (m <= 3 || m >= 13);
 
-    int polje[m][m];
+    float polje[m][m];
 
     for (i=0; i<m; ++i) {
         for (j=0; j<m; ++j) {
-            scanf("%d", &polje[i][j]);
+            scanf("%f", &polje[i][j]);
         }
     }
 
@@ -18,8 +19,10 @@ int main() {
     for (i=0; i<m; ++i) {
         for (j=0; j<m; ++j) {
             if (i + j > m - 1 && i - j < 0 && polje[i][j] > 0) {
-                printf("%d ", polje[i][j]);
+                printf("%.2f ", polje[i][j]);
             }
         }
     }
+
+    return 0;
 }

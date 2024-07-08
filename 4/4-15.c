@@ -1,13 +1,14 @@
 #include <stdio.h>
+
 int main() {
     int n, i, min, max;
     do{
         scanf("%d", &n);
     }while (n <=5 || n > 15);
 
-    int polje[n];
+    float polje[n];
     for (i=0; i<n; ++i){
-        scanf("%d", &polje[i]);
+        scanf("%f", &polje[i]);
     }
 
     min = polje[0];
@@ -23,7 +24,9 @@ int main() {
     }
 
     for (i=0; i<n; ++i) {
-        polje[i] = (float)(i - min) / (max - min);
-        printf("%d ", polje[i]);
+        polje[i] = (polje[i] - min) / (max - min);
+        printf("%.2f ", polje[i]);
     }
+
+    return 0;
 }
