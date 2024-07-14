@@ -16,10 +16,10 @@ int main() {
         scanf("%d", &n);
     }while (n <= 9 || n > 200);
 
-    double* array = (double*)malloc(n * sizeof(double));
+    double* polje = (double*)malloc(n * sizeof(double));
 
     for (int i = 0; i < n; i++) {
-        array[i] = (double)(rand() % 601) - 300;
+        polje[i] = (double)(rand() % 601) - 300;
     }
 
     int brojElemenata = n / 2;
@@ -44,14 +44,13 @@ int main() {
 
     double suma = 0.0;
     for (int i = 0; i < brojElemenata; ++i) {
-        suma += array[odabraniIndeksi[i]];
+        suma += polje[odabraniIndeksi[i]];
     }
 
     double sredina = suma / brojElemenata;
     printf("%.3lf\n", sredina);
 
-    free(array);
+    free(polje);
     free(odabraniIndeksi);
-
     return 0;
 }

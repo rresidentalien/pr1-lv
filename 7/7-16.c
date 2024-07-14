@@ -10,7 +10,7 @@ float funkcija(int *x, float n) {
     float suma = 0;
     int i;
     for (i=2; i < n-1; ++i) {
-        suma += abs(x[i] - pow(x[i-1], 2) + pow(x[i], 3));
+        suma += fabs(x[i-1] - pow(x[i+1], 2)) + pow(x[i], 3);
     }
     float fx = 1/n * suma;
 

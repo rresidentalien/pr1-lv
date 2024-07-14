@@ -8,43 +8,45 @@ aritmetiˇcku sredinu i prona´ci element polja koji joj je najbliˇzi.*/
 #include <time.h>
 
 double randomBroj() {
-    double random = (rand() % 11001) - 1000;
+    double random = (rand() % 9001) + 1000;
+
     return random;
 }
 
-double sredina(double* array) {
+double sredina(double* polje, int velicina) {
     double suma = 0;
-    double djelitelj = randomBroj();
-    for (int i = 0; i < djelitelj; i++) {
-        suma += array[i];
+    for (int i = 0; i < velicina; i++) {
+        suma += polje[i];
     }
-    return suma / djelitelj;
+
+    return suma / velicina;
 }
 
-int najbliziElement(double* array, int size, double mean) {
+int najbliziElement(double* polje, int velicina, double prosjek) {
     int najblizi = 0;
-    double pocetnaVrijednost = abs(array[0] - mean);
-    for (int i = 1; i < size; i++) {
-        double razlika = abs(array[i] - mean);
+    double pocetnaVrijednost = fabs(polje[0] - prosjek);
+    for (int i = 1; i < velicina; i++) {
+        double razlika = fabs(polje[i] - prosjek);
         if (razlika < pocetnaVrijednost) {
             pocetnaVrijednost = razlika;
             najblizi = i;
         }
     }
+
     return najblizi;
 }
 
 int main() {
     srand(time(NULL));
 
-    int size = randomBroj();
+    int size = (int)randomBroj();
     double* array = malloc(size * sizeof(double));
 
     for (int i = 0; i < size; ++i) {
         array[i] = (rand() % 26) - 5;
     }
 
-    double mean = sredina(array);
+    double mean = sredina(array, size);
     int closestIndex = najbliziElement(array, size, mean);
     double closestElement = array[closestIndex];
 

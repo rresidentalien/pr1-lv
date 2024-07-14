@@ -30,6 +30,5 @@ int main() {
     printf("%s", str);
 
     free(str);
-
     return 0;
 }

@@ -23,8 +23,6 @@ int main() {
     
     fgets(str, sizeof(str), stdin);
     
-    str[strcspn(str, "\n")] = '\0';
-    
     int suma = sumaASCIIvrijednosti(str);
     
     if (suma % strlen(str) == 0) {

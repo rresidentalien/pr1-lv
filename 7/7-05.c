@@ -3,13 +3,17 @@ na ekran ispisati broj s najve´cim zbrojem znamenki. Koristiti pokazivaˇcku no
 za pristup elementima polja.*/
 
 #include <stdio.h>
+#include <math.h>
 
 int sumaZnamenki(int num) {
+    num = abs(num);
+
     int suma = 0;
     while (num != 0) {
         suma += num % 10;
         num /= 10;
     }
+
     return suma;
 }
 
@@ -21,22 +25,22 @@ int main() {
 
     int polje[m];
     for (int i = 0; i < m; ++i) {
-        scanf("%d", &polje[i]);
+        scanf("%d", (polje + i));
     }
 
     int maxSuma = 0;
-    int *maxNumPtr = NULL;
+    int *maxBroj = NULL;
     int trenutniBroj;
 
     for (int i = 0; i < m; ++i) {
-        trenutniBroj = sumaZnamenki(polje[i]);
+        trenutniBroj = sumaZnamenki(*(polje + i));
         if (trenutniBroj > maxSuma) {
             maxSuma = trenutniBroj;
-            maxNumPtr = &polje[i];
+            maxBroj = (polje + i);
         }
     }
 
-    printf("%d", *maxNumPtr);
+    printf("%d", *maxBroj);
 
     return 0;
 }

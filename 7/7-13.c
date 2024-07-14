@@ -10,39 +10,37 @@ njihove razlike na ekran. U potpunosti rukovati zauzetom memorijom.*/
 #include <math.h>
 
 int main() {
+    srand(time(NULL));
+    
     int n;
     do{
         scanf("%d", &n);
     }while (n <= 5 || n > 20);
 
-    srand(time(NULL));
-
-    double* podaci = NULL; 
+    double* podaci = NULL;
+    double min, max;
 
     for (int i = 0; i < n; ++i) {
-        double t = rand() % 991 + 10;
+        int t = (rand() % 991) + 10;
         podaci = (double*)malloc(t * sizeof(double));
+       
+        podaci[0] = (double)(rand() % 11) - 10;
+        min = podaci[0];
+        max = podaci[0];
 
-        for (i = 0; i < n; ++i) {
-            double broj = (double)(rand() % 11) - 10;
-            podaci[i] = broj;
+        for (int j = 1; j < t; ++j) {
+            podaci[j] = (double)(rand() % 11) - 10;
+            if (podaci[j] < min) {
+                min = podaci[j];
+            }
+            if (podaci[j] > max) {
+                max = podaci[j];
+            }
         }
+        printf("%.2lf ", fabs(max - min));
+
+        free(podaci);
     }
 
-    double min = podaci[0];
-    double max = podaci[0];
-
-    for (int i = 1; i < n; ++i) {
-        if (podaci[i] < min) {
-            min = podaci[i];
-        }
-        if (podaci[i] > max) {
-            max = podaci[i];
-        }
-    }
-
-    printf("%.2lf", fabs(max - min));
-
-    free(podaci);
     return 0;
 }

@@ -9,9 +9,9 @@ funkcije i ispisati na ekran povratnu vrijednost.*/
 float funkcija (int *x, int n) {
     int suma = 0;
     for (int i = 1; i < n-1; ++i) {
-        suma += abs(i * pow(*(x+i+1), 2) - 1);
+        suma += fabs(i * pow(x[i+1], 2) - 1);
     }
-    int fx = *(x) * suma;
+    float fx = *(x) * suma;
 
     return fx;
 }
@@ -24,5 +24,7 @@ int main() {
         scanf("%d", &polje[i]);
     }
 
-    printf("%.3f", funkcija(polje, 10));
+    printf("%.2f", funkcija(polje, 10));
+
+    return 0;
 }

@@ -9,7 +9,7 @@ ekran.*/
 #include <stdlib.h>
 #include <time.h>
 
-void pupuniPolje(float* array, int n) {
+void popuniPolje(float* array, int n) {
     srand(time(NULL));
     float broj;
     for (int i = 0; i < n; ++i) {
@@ -25,12 +25,11 @@ int main() {
     int velicina = 800;
     float* polje = (float*)malloc(velicina * sizeof(float));
     
-    pupuniPolje(polje, velicina);
+    popuniPolje(polje, velicina);
     for (int i = 0; i < velicina; ++i) {
         printf("%.2f ", polje[i]);
     }
 
     free(polje);
-
     return 0;
 }
